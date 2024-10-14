@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Памятник</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        h1 {
+            margin-bottom: 0;
+        }
+        .obelisk {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .obelisk h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        .btn {
+        display: inline-block;
+        position: relative;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #3498db;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .btn:before {
+        content: '←';
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        font-size: 24px;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        padding-right: 40px;
+        background-color: #2980b9;
+    }
+
+    .btn:hover:before {
+        right: 10px;
+        opacity: 1;
+    }
+
+    .btn:active {
+        transform: scale(0.95) translateY(2px);
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Памятник советских воинов</h1>
+    </header>
+    
+    <main>
+        <section class="obelisk">
+            <h2>Исторические сведения</h2>
+            <p>
+                На территории воинского захоронения гражданского кладбища "Лядцы" находится одиночная могила Героя Советского Союза - Хлуднева Федора Матвеевича (20.06.17 - 05.01.1944) . Орудийный номер 89-й тяжёлой гаубичной артиллерийской бригады разрушения (12-я артиллерийская дивизия, 4-й артиллерийский корпус прорыва, 65-я армия, Белорусский фронт), красноармеец. Во время Великой Отечественной войны в действующей армии – с 28 апреля 1943 года воевал на Центральном (с 20 октября 1943 года – Белорусском) фронте. Особо отличился в боях по расширению плацдарма на правом берегу Днепра в районе южнее города Речица (Гомельская область Белоруссии). Находясь на наблюдательном пункте батареи, 18 и 19 ноября 1943 года огнем ручного пулемёта отразил 3 атаки противника, пытавшего прорваться к позициям батареи. Был дважды ранен, но поля боя не покинул. Прекратил огонь только тогда, когда потерял сознание после второго ранения.
+Указом Президиума Верховного Совета СССР от 24 декабря 1943 года за образцовое выполнение боевых заданий командования на фронте борьбы с немецкими захватчиками и проявленные при этом отвагу и геройство Хлудневу Фёдору Матвеевичу присвоено звание Героя Советского Союза.
+            </p>
+            <img src="C:\Users\SokkaWF\Desktop\конкурс\image\ladci.jpg" alt="Обелиск памяти">
+        </section>
+        
+    </main>
+    <a href="страница.html" class="btn">Вернутся назад</a>
+    <footer>
+        <p>&copy; 2024 Добрушский Государственный политехнический колледж. Вечная память героям.</p>
+    </footer>
+</body>
+</html>
