@@ -3,118 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обелиски Памяти</title>
+    <meta name="description" content="Дизайн, который помогает брендам выглядеть уверенно и запоминаться.">
+    <title>KISA — дизайн для вашего бренда</title>
     <style>
+        :root {
+            --ink: #1e1b22;
+            --paper: #f8f4ef;
+            --rose: #eb8a87;
+            --yellow: #ffc941;
+            --violet: #5947c7;
+            --line: rgba(30, 27, 34, .16);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
+            margin: 0;
+            color: var(--ink);
+            background: var(--paper);
+            font-family: Arial, Helvetica, sans-serif;
         }
-        header {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            text-align: center;
-            padding: 1rem;
-            border-radius: 5px;
-        }
-        h1 {
-            margin-bottom: 0;
-        }
-        .obelisk {
-            background-color: #fff;
-            border-radius: 5px;
-            padding: 20px;
-            margin-top: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .obelisk h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border-radius: 5px;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-style: italic;
-            color: #7f8c8d;
-        }
-        .btn {
-        display: inline-block;
-        position: relative;
-        padding: 10px 20px;
-        color: #fff;
-        background-color: #3498db;
-        text-decoration: none;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        border-radius: 5px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-    }
+        a { color: inherit; }
+        .wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
 
-    .btn:before {
-        content: '→';
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-        font-size: 24px;
-        opacity: 0;
-        transition: all 0.3s ease;
-    }
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 26px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        .logo { font-weight: 900; font-size: 25px; letter-spacing: -.08em; text-decoration: none; }
+        .logo span { color: var(--violet); }
+        .menu { display: flex; gap: 28px; font-size: 14px; font-weight: 700; }
+        .menu a { text-decoration: none; }
+        .menu a:hover { color: var(--violet); }
 
-    .btn:hover {
-        padding-right: 40px;
-        background-color: #2980b9;
-    }
+        .hero { padding: 74px 0 100px; position: relative; overflow: hidden; }
+        .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 55px; align-items: center; }
+        .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 12px; font-weight: 800; color: var(--violet); }
+        h1 { font-size: clamp(54px, 7.1vw, 94px); line-height: .91; letter-spacing: -.075em; margin: 18px 0 28px; max-width: 700px; }
+        .hero-text { max-width: 500px; font-size: 19px; line-height: 1.45; margin: 0 0 34px; }
+        .button {
+            display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+            padding: 17px 24px; border: 2px solid var(--ink); background: var(--yellow);
+            color: var(--ink); font-weight: 800; text-decoration: none; border-radius: 999px;
+            box-shadow: 4px 4px 0 var(--ink); transition: transform .2s, box-shadow .2s;
+        }
+        .button:hover { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+        .button--dark { color: white; background: var(--ink); border-color: var(--ink); box-shadow: 4px 4px 0 var(--rose); }
+        .hero-card { min-height: 425px; position: relative; background: var(--violet); border-radius: 35px; overflow: hidden; border: 2px solid var(--ink); }
+        .hero-card::before { content: ""; position: absolute; width: 290px; height: 290px; background: var(--yellow); border-radius: 50%; top: -78px; right: -42px; }
+        .hero-card::after { content: ""; position: absolute; width: 170px; height: 170px; background: var(--rose); border-radius: 50%; bottom: -48px; left: -28px; }
+        .hero-word { position: absolute; z-index: 1; left: 34px; bottom: 30px; font-size: clamp(80px, 11vw, 140px); font-weight: 900; letter-spacing: -.13em; color: var(--paper); transform: rotate(-7deg); }
+        .spark { position: absolute; z-index: 2; font-size: 62px; right: 48px; bottom: 80px; color: var(--ink); }
 
-    .btn:hover:before {
-        right: 10px;
-        opacity: 1;
-    }
+        .ticker { overflow: hidden; padding: 16px 0; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); background: var(--rose); white-space: nowrap; font-size: 19px; font-weight: 900; }
+        .ticker span { display: inline-block; animation: scroll 22s linear infinite; }
+        @keyframes scroll { to { transform: translateX(-50%); } }
 
-    .btn:active {
-        transform: scale(0.95) translateY(2px);
-    }
+        section { padding: 104px 0; }
+        .section-title { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 42px; }
+        h2 { max-width: 650px; font-size: clamp(38px, 5vw, 62px); letter-spacing: -.065em; line-height: .95; margin: 0; }
+        .section-note { max-width: 270px; font-size: 15px; line-height: 1.4; }
+        .services { background: #fff; }
+        .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--ink); border-left: 2px solid var(--ink); }
+        .service { min-height: 315px; padding: 25px; border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); position: relative; }
+        .service:nth-child(2) { background: var(--yellow); }
+        .service:nth-child(3) { background: var(--violet); color: white; }
+        .service-number { font-size: 13px; font-weight: bold; }
+        .service h3 { font-size: 30px; line-height: 1; letter-spacing: -.05em; margin: 76px 0 14px; }
+        .service p { max-width: 250px; margin: 0; line-height: 1.45; font-size: 15px; }
+        .service-icon { position: absolute; top: 22px; right: 22px; font-size: 35px; }
+
+        .about { background: var(--ink); color: var(--paper); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 65px; align-items: start; }
+        .about h2 { color: var(--yellow); }
+        .about-text { font-size: 21px; line-height: 1.42; margin: 0; }
+        .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 68px; }
+        .fact { border-top: 1px solid rgba(255,255,255,.4); padding-top: 14px; }
+        .fact b { font-size: 37px; letter-spacing: -.06em; color: var(--rose); display: block; }
+        .fact span { font-size: 13px; }
+
+        .contact { padding: 105px 0 50px; }
+        .contact-box { padding: clamp(30px, 6vw, 74px); background: var(--yellow); border: 2px solid var(--ink); border-radius: 32px; text-align: center; }
+        .contact-box h2 { max-width: 800px; margin: 0 auto 24px; }
+        .contact-box p { max-width: 490px; margin: 0 auto 30px; font-size: 18px; line-height: 1.45; }
+        footer { display: flex; justify-content: space-between; padding: 30px 0 40px; font-size: 13px; color: #615c64; }
+
+        @media (max-width: 760px) {
+            .wrap { width: min(100% - 30px, 1180px); }
+            .menu { display: none; }
+            .hero { padding: 50px 0 65px; }
+            .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 38px; }
+            .hero-card { min-height: 330px; }
+            .section-title { display: block; }
+            .section-note { margin-top: 15px; }
+            section { padding: 70px 0; }
+            .service-grid { grid-template-columns: 1fr; }
+            .service { min-height: 255px; }
+            .service h3 { margin-top: 54px; }
+            .facts { margin-top: 42px; }
+            footer { display: block; line-height: 1.8; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Обелиски Памяти</h1>
+    <header class="wrap topbar">
+        <a class="logo" href="#top">KI<span>SA</span>—design</a>
+        <nav class="menu" aria-label="Основная навигация">
+            <a href="#services">Услуги</a>
+            <a href="#about">Обо мне</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+        <a class="button" href="https://t.me/kisaweyta" target="_blank" rel="noopener">Написать ↗</a>
     </header>
-    
-    <main>
-        <section class="obelisk">
-            <h2>Что такое обелиски памяти?</h2>
-            <p>Обелиски памяти - это монументальные сооружения, воздвигнутые в честь важных исторических событий или людей. Они служат напоминанием о прошлом и символом уважения к тем, кто пожертвовал собой ради будущего.</p>
-            <img src="C:\Users\SokkaWF\Desktop\конкурс\image\Gomel1.jpg" alt="Обелиск памяти">
+
+    <main id="top">
+        <section class="hero wrap">
+            <div class="hero-grid">
+                <div>
+                    <div class="eyebrow">Графический дизайнер · 2024</div>
+                    <h1>Дизайн, который хочется сохранить.</h1>
+                    <p class="hero-text">Помогаю брендам говорить с людьми ярко, честно и по-своему. От первой идеи до готового визуала.</p>
+                    <a class="button button--dark" href="https://t.me/kisaweyta" target="_blank" rel="noopener">Обсудить проект ↗</a>
+                </div>
+                <div class="hero-card" aria-label="Декоративная карточка KISA">
+                    <div class="spark">✦</div>
+                    <div class="hero-word">KISA</div>
+                </div>
+            </div>
         </section>
 
-        <section class="obelisk">
-            <h2>История обелисков</h2>
-            <p>Обелиски имеют древнюю историю, восходящую к временам Древнего Египта. Изначально они были связаны с солнечным культом и символизировали луч солнца. В современном мире обелиски часто используются как мемориалы и памятники.</p>
+        <div class="ticker" aria-hidden="true"><span>АЙДЕНТИКА ✦ СОЦСЕТИ ✦ УПАКОВКА ✦ САЙТЫ ✦ АЙДЕНТИКА ✦ СОЦСЕТИ ✦ УПАКОВКА ✦ САЙТЫ ✦&nbsp;</span></div>
+
+        <section class="services" id="services">
+            <div class="wrap">
+                <div class="section-title">
+                    <h2>Визуал для идей, которым есть что сказать.</h2>
+                    <p class="section-note">Выбирайте отдельную услугу или соберём решение под вашу задачу.</p>
+                </div>
+                <div class="service-grid">
+                    <article class="service"><span class="service-number">01</span><span class="service-icon">✳</span><h3>Айдентика</h3><p>Логотип, цвет, типографика и правила, по которым бренд узнают с первого взгляда.</p></article>
+                    <article class="service"><span class="service-number">02</span><span class="service-icon">⌁</span><h3>Дизайн для соцсетей</h3><p>Шаблоны и контент, которые создают цельный образ и удерживают внимание.</p></article>
+                    <article class="service"><span class="service-number">03</span><span class="service-icon">◒</span><h3>Упаковка и полиграфия</h3><p>Этикетки, мерч, меню и печатные материалы, к которым хочется прикоснуться.</p></article>
+                </div>
+            </div>
         </section>
 
-        <section class="obelisk">
-            <h2>Значение в современном обществе</h2>
-            <p>Сегодня обелиски памяти играют важную роль в сохранении исторической памяти и воспитании патриотизма. Они служат местом проведения памятных церемоний и помогают новым поколениям помнить о важных событиях прошлого.</p>
+        <section class="about" id="about">
+            <div class="wrap">
+                <div class="about-grid">
+                    <h2>Не просто красиво. По-настоящему ваше.</h2>
+                    <p class="about-text">Я погружаюсь в проект, чтобы найти его характер и перевести его на язык визуала. Без шаблонных решений — с вниманием к деталям, задачам и людям, для которых вы создаёте.</p>
+                </div>
+                <div class="facts">
+                    <div class="fact"><b>1:1</b><span>Работаю лично с каждым проектом</span></div>
+                    <div class="fact"><b>∞</b><span>Любви к смелым и живым идеям</span></div>
+                    <div class="fact"><b>0</b><span>Скучных универсальных шаблонов</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact wrap" id="contact">
+            <div class="contact-box">
+                <div class="eyebrow">Есть идея?</div>
+                <h2>Давайте сделаем ей классный визуал.</h2>
+                <p>Расскажите пару слов о проекте в Telegram — отвечу, задам нужные вопросы и предложу следующий шаг.</p>
+                <a class="button button--dark" href="https://t.me/kisaweyta" target="_blank" rel="noopener">Написать в Telegram ↗</a>
+            </div>
         </section>
     </main>
-    <a href="страница.html" class="btn">Подробнее</a>
-    <footer>
-        <p>&copy; 2024 Добрушский Государственный политехнический колледж. Все права защищены.</p>
-    </footer>
+
+    <footer class="wrap"><span>© KISA design, 2024</span><span>Дизайн с характером</span></footer>
 </body>
 </html>
